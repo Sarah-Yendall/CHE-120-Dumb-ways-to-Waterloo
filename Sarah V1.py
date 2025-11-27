@@ -58,30 +58,30 @@ def timed_input(prompt, timeout):
     return user_input[0]  # returns None if time expired
 
 
-# ------------------ MINIGAMES --------------------------
+# Minigames!!!
 
 def minigame_wrong_subject():
     print("\n💣 QUICK! Choose the subject that doesn't fit before bomb blows!")
     print("Type: CHE120 / CHE100 / MATH100")
-    answer = timed_input("Your choice: ", 3)
+    answer = timed_input("Your choice: ", 7)
 
     if answer == "MATH100":
-        print("😅 Correct! We don't take MATH100")
+        print("✅ Correct! We don't take MATH100")
         return True
     else:
-        print("💥 BOOM! You take this class!!(you should know what courses you take...")
+        print("💥BOOM! You take this class!!(you should know what courses you take...")
         return False
 
 
 def minigame_fail_exam():
-    print("\n⌨️ TYPE FAST! Type the sentence 'input-output+generation-accumulation=0' within 15 seconds to not fail your exam!")
+    print("\n 💬 TYPE FAST! Type the sentence 'input-output+generation-accumulation=0' within 15 seconds to not fail your exam!")
     answer = timed_input("Type here: ", 15)
 
     if answer == "input-output+generation-accumulation=0":
-        print(" Nice, you didn't fail!")
+        print(" Nice, you didn't fail!😎")
         return True
     else:
-        print("⏱️ Too slow or wrong, you failed your exam!")
+        print("⏱️ Too slow or wrong, you failed your exam🫣!")
         return False
 
 
@@ -91,17 +91,29 @@ def minigame_math():
     answer = timed_input("Your answer: ", 3)
 
     if answer == "2x":
-        print("👍 Correct!")
+        print("👍 Correct! Professor Comfort is Happy, Happy, Happy")
         return True
     else:
-        print("❌ Times up! You should've studied more...")
+        print("❌ Times up! You should've studied more...😬")
         return False
+
+def minigame_tims_run():
+    print("\n☕️ You're running late to class but also need caffeine, type LARGE ICED COFFEE in 10 seconds to order as fast as you can!")
+    answer = timed_input("Type here: ", 15)
+
+    if answer == 'LARGE ICED COFFEE'
+        print("Your addiction was fed, and you made it to class!⚡️")
+        return True
+    else:
+        print("Too slow! You waited in line for 20 min and were late to class")
+        return False
+       
     
    
 
 
 # List of available minigames
-MINIGAMES = [ minigame_math]
+MINIGAMES = [ minigame_math,minigame_fail_exam,minigame_wrong_subject, minigame_tims_run ]
 
 
 # ------------------ MAIN GAME LOOP ----------------------
@@ -111,7 +123,7 @@ def main():
     lives = 3
 
     print("🎉 Welcome to Dumb Ways to Waterloo!")
-    print("Survive as many minigames as possible...or die\n")
+    print("Survive as many minigames as possible...or die☠️\n")
 
     while lives > 0:
         game = random.choice(MINIGAMES)
